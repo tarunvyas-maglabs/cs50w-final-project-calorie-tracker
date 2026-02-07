@@ -1,0 +1,31 @@
+{% extends "calorie/layout.html" %}
+
+{% block body %}
+    <div class="mb-3" style="margin-top: 40px;">
+        {% if message %}
+            <div class="alert alert-danger" role="alert">
+                {{ message}}
+            </div>
+        {% endif %}
+    </div>
+    <div class="mb-3" style="margin-top: 40px;">
+        <div class="mb-3">
+            <h1>Log In</h1>
+        </div>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Username</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Username" name="username">
+            </div>
+            <div class="mb-3">
+                <label for="inputPassword5" class="form-label">Password</label>
+                <input type="password" name="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Password">
+            </div>
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+    <div class="mb-3">
+        Don't have an account? <a href="{% url 'register' %}">Register Here.</a>
+    </div>
+{% endblock %}

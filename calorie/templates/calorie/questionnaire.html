@@ -1,0 +1,72 @@
+{% extends "calorie/layout.html" %}
+
+{% block body %}
+    <h1 style="margin-top: 40px; margin-bottom: 20px;">Questionnaire</h1>
+    <form action="{% url 'questionnaire' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Height</label>
+            <input type="number" name="height" class="form-control" id="exampleFormControlInput1" placeholder="Height" step="1">
+            <div id="passwordHelpBlock" class="form-text">
+                Please Enter Your Height in cm.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Weight</label>
+            <input type="number" name="weight" class="form-control" id="exampleFormControlInput1" placeholder="Weight" step="0.1">
+            <div id="passwordHelpBlock" class="form-text">
+                Please Enter Your Weight in kg.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Age</label>
+            <input type="number" name="age" class="form-control" id="exampleFormControlInput1" placeholder="Age" step="1">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Gender</label>
+            <select class="form-select" aria-label="Default select example" name="gender">
+                <option selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Activity Level</label>
+            <select class="form-select" aria-label="Default select example" name="activity-level">
+                <option selected>Select Activity Level</option>
+                <option value="sedentary">Sedentary</option>
+                <option value="moderate">Moderately Active</option>
+                <option value="active">Active</option>
+                <option value="very-active">Very Active</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Goal</label>
+            <select class="form-select" aria-label="Default select example" name="goal">
+                <option selected>Choose Goal</option>
+                <option value="bulk">Bulk</option>
+                <option value="cut">Cut</option>
+                <option value="maintain">Maintain</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Diet Preference</label>
+            <select class="form-select" aria-label="Default select example" name="diet-pref">
+                <option selected>Choose Diet Preference</option>
+                <option value="balanced">Balanced</option>
+                <option value="low-fat">Low Fat</option>
+                <option value="low-carb">Low Carb</option>
+              </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Protein Preference</label>
+            <select class="form-select" aria-label="Default select example" name="protein-pref">
+                <option selected>Choose Protein Preference</option>
+                <option value="low">Low</option>
+                <option value="moderate">Moderate</option>
+                <option value="high">High</option>
+              </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

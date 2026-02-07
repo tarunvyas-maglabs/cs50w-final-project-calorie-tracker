@@ -1,0 +1,47 @@
+{% if has_log_entries %}
+            {% for entry in entries %}
+                <div class="card" style="margin-top:20px;">
+                    <div class="card-body" >
+                        <div class="row">
+                            <div class="col-10">
+                                <h1>{{entry.food.name}}</h1>
+                                <h4>{{ entry.calories|floatformat:0 }}kcal</h4>
+                                <h5>{{ entry.protein|floatformat:0 }}P  {{entry.carbs|floatformat:0}}C  {{entry.fats|floatformat:0}}F</h5>   
+                            </div>
+                            <div class="col-1 d-flex align-items-center justify-content-end">
+                                <h4 style=" vertical-align: center;">{{ entry.quantity }} {{entry.unit}}</h4>
+                            </div>
+                            <div class="col-1 d-flex align-items-start justify-content-end">
+                                <button type="button" class="btn-close" data-bs-toggle="modal" data-bs-target="#removeLogModal-{{ entry.id }}" aria-label="Close"></button>
+                            </div>
+                            <div class="modal fade" id="removeLogModal-{{entry.id}}" role="dialog" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered ">
+                                    <div class="modal-content">
+        
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Remove Entry </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+        
+                                    <div class="modal-body">
+                                        <p>Are you sure you would like to remove this entry from your meals?</p>
+                                    </div>
+        
+                                    <div class="modal-footer">
+                                        <form method="POST" action="{% url 'remove_log' %}">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="log_id" value="{{ entry.id }}">
+                                        <input type="hidden" name="daily_log_id" value="{{ daily_log.id }}">
+                                        <input type="hidden" name="daily_log_date" value="{{ daily_log.date|date:'Y-m-d'}}">
+                                        <button type="submit" class="btn btn-dark">Remove</button>
+                                        </form>
+                                    </div>
+  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>     
+                    </div>
+                </div>
+            {% endfor %}
+{% endif %}

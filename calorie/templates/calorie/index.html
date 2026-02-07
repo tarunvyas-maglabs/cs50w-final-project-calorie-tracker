@@ -1,0 +1,13 @@
+{% extends "calorie/layout.html" %}
+
+{% block body %}
+    <br>
+    <div class="mb-3">
+        <h1>Welcome to your Calorie Tracker!</h1>
+    </div>
+
+    <div class="mb-3">
+        <h3><a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}"">Regsiter</a> to get started!</h3>
+    </div>
+    
+{% endblock %}
