@@ -47,4 +47,3 @@ The admin panel allows administrators to manage the food database and users. Adm
 - **Frontend:** HTML, CSS, JavaScript  
 - **Database:** SQLite (Django default)  
 - **Admin Tools:** Django Admin Panel  
->>>>>>> d9529dd73194a99fcc225ff14050d55614a4a961
