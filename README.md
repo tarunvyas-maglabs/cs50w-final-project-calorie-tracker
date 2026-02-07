@@ -13,6 +13,7 @@ A nutrition plan is created using the information entered by the user.
 ## Logger
 
 The user can log their meals for the day by searching for the food from our database.
+
 <img width="2559" height="1350" alt="Screenshot 2026-02-07 at 12 01 56 PM" src="https://github.com/user-attachments/assets/c99e9ad2-fcd5-466f-bc01-d1879b772a49" />
 <img width="2560" height="1347" alt="Screenshot 2026-02-07 at 12 02 12 PM" src="https://github.com/user-attachments/assets/5599e4c2-3245-4ecd-a8e4-71205938881a" />
 <img width="2560" height="1350" alt="Screenshot 2026-02-07 at 12 05 31 PM" src="https://github.com/user-attachments/assets/54ad2f9b-f1e9-4865-8aa5-a702371311e2" />
@@ -20,3 +21,9 @@ The user can log their meals for the day by searching for the food from our data
 The user can select the quanity and unit of the food
 
 <img width="2557" height="1346" alt="Screenshot 2026-02-07 at 12 05 08 PM" src="https://github.com/user-attachments/assets/65de5e9c-27c0-4f23-92a7-c4ac5a46d686" />
+
+## Admin
+
+The admin panel lets the admin add, edit and delete foods to the database, manage users, and add, edit and delete units to the foods 
+
+<img width="2560" height="1350" alt="Screenshot 2026-02-07 at 12 12 04 PM" src="https://github.com/user-attachments/assets/e5100900-be8a-4d2e-a51a-981b4a34fe01" />
